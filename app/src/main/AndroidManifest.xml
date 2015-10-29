@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.niesen.cporm">
+
+
+    <application
+        android:name=".BaseApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <meta-data
+            android:name="AUTHORITY"
+            android:value="com.niesen.cpo.lib.provider" />
+        <meta-data
+            android:name="CPORM_CONFIG"
+            android:value="com.niesen.cporm.model.MyCPOrmConfiguration" />
+        <meta-data
+            android:name="MAPPING_FACTORY"
+            android:value="com.niesen.cporm.mapping.CustomColumnMapper" />
+
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:name="com.niesen.cpo.lib.provider.CPOrmContentProvider"
+            android:authorities="com.niesen.cpo.lib.provider"
+            android:exported="false"
+            android:permission="true"
+            android:process=":provider" />
+
+    </application>
+
+</manifest>
